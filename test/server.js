@@ -1,11 +1,9 @@
-'use strict';
-
-let chai = require('chai');
-let server = require('../server/server');
+const chai = require('chai');
+const server = require('../server/server');
 
 chai.use(require('chai-http'));
 
-let expect = chai.expect;
+const expect = chai.expect;
 
 describe('WikiTranslate API', function () {
   // Wikipedia API is sometimes a bit picky.

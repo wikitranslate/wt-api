@@ -1,10 +1,9 @@
-'use strict';
+const koa = require('koa');
+const koaCors = require('koa-cors');
 
-let apiRouter = require('./api');
-let koa = require('koa');
-let koaCors = require('koa-cors');
+const apiRouter = require('./api');
 
-let app = koa();
+const app = koa();
 
 app.use(koaCors({ methods: 'GET' }));
 
