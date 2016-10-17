@@ -3,11 +3,9 @@
   "version": "0.0.1",
   "description": "Wikipedia translation as a service",
   "author": "n6g7 <n6g7@gnab.fr>",
-  "main": "server/index.js",
+  "main": "handler.js",
   "scripts": {
-    "pretest": "eslint ./",
-    "start": "node server/server.js",
-    "test": "mocha"
+    "pretest": "eslint ./"
   },
   "keywords": [
     "api",
@@ -22,16 +20,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "koa": "^1.2.0",
-    "koa-cors": "0.0.16",
-    "koa-router": "^5.4.0",
-    "lodash": "^4.6.1",
     "wikitranslate": "0.0.7"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "eslint": "^2.5.1",
-    "mocha": "^2.4.5"
+    "eslint": "^2.5.1"
   }
 }

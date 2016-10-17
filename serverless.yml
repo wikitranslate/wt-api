@@ -1,0 +1,26 @@
+service: wikitranslate
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: prod
+  region: eu-west-1
+
+package:
+  exclude:
+    - doc
+
+functions:
+  wikitranslate:
+    handler: handler.wikitranslate
+    events:
+      - http:
+          path: "{fromLang}/{toLang}/{input}"
+          method: get
+          integration: lambda
+          request:
+            parameters:
+              paths:
+                fromLang: true
+                toLang: true
+                input: true
