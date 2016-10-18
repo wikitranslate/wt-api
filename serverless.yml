@@ -11,8 +11,8 @@ package:
     - doc
 
 functions:
-  wikitranslate:
-    handler: handler.wikitranslate
+  translate:
+    handler: handler.translate
     events:
       - http:
           path: "{fromLang}/{toLang}/{input}"
@@ -24,3 +24,10 @@ functions:
                 fromLang: true
                 toLang: true
                 input: true
+  langs:
+    handler: handler.langs
+    events:
+      - http:
+          path: langs
+          method: get
+          integration: lambda
