@@ -6,7 +6,7 @@ provider:
   stage: prod
   region: eu-west-2
   profile: serverless
-  memorySize: 64
+  memorySize: 128
 
 package:
   exclude:
@@ -20,6 +20,7 @@ functions:
           path: "{fromLang}/{toLang}/{input}"
           method: get
           integration: lambda
+          cors: true
           request:
             parameters:
               paths:
@@ -33,3 +34,4 @@ functions:
           path: langs
           method: get
           integration: lambda
+          cors: true
