@@ -5,7 +5,7 @@
   "author": "n6g7 <n6g7@gnab.fr>",
   "main": "handler.js",
   "scripts": {
-    "pretest": "eslint ./"
+    "pretest": "standard"
   },
   "keywords": [
     "api",
@@ -23,6 +23,6 @@
     "wikitranslate": "0.0.7"
   },
   "devDependencies": {
-    "eslint": "^2.5.1"
+    "standard": "^10.0.2"
   }
 }
