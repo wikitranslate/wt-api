@@ -2,9 +2,11 @@ service: wikitranslate
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
   stage: prod
-  region: eu-west-1
+  region: eu-west-2
+  profile: serverless
+  memorySize: 64
 
 package:
   exclude:
