@@ -1,0 +1,32 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/wt-api
+
+    docker:
+      - image: node:6.10.2
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - wt-api-{{ .Branch }}-{{ checksum "package.json" }}
+            - wt-api-{{ .Branch }}
+            - wt-api-master-{{ checksum "package.json" }}
+            - wt-api-master
+
+      - run:
+          name: Install dependencies
+          command: yarn
+
+      - run:
+          name: Run tests
+          command: yarn test
+
+      - save_cache:
+          key: wt-api-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.yarn
+            - ~/wt-api/node_modules
