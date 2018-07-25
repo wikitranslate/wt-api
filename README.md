@@ -11,7 +11,7 @@ This package is an api to answer translation requests.
 
 ## Usage
 
-The API is available on heroku : https://wiki-translate.herokuapp.com/api
+The API is available here: https://translate.gnab.fr/
 
 Usage is fairly simple:
 
